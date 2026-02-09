@@ -56,17 +56,20 @@ p{font-size:20px; line-height:1.6;}
         /* --- Cinematic Intro Overlay --- */
 #introOverlay{
   position:fixed;
-  inset:0;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   z-index:9999;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   padding:24px;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 55%),
-              linear-gradient(#020617, #0f172a);
+  background:#020617;   /* solid background so it clearly appears */
   transition: opacity 800ms ease, transform 800ms ease;
 }
+
 
 #introOverlay.hide{
   opacity:0;
