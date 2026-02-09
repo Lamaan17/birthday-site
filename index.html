@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Our Story</title>
-    <style>
-        body {
-            margin:0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            text-align:center;
-        }
+<title>Our Story</title>
 
-        section {
-            padding: 100px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(#020617, #0f172a);
+    color:white;
+    text-align:center;
+}
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 
-        h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
 
-        p {
-            font-size: 20px;
-            max-width: 700px;
-            margin:auto;
-            line-height: 1.6;
-        }
-    </style>
+.event{
+    margin:80px 20px;
+    padding:30px;
+    background:rgba(255,255,255,0.05);
+    border-radius:16px;
+    box-shadow:0 0 20px rgba(255,255,255,0.05);
+}
+
+h1{
+    font-size:56px;
+}
+
+h2{
+    font-size:32px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.6;
+}
+</style>
+
 </head>
 
 <body>
 
-<section>
-    <h1>For [Her Name] ❤️</h1>
-    <p>This is our story.</p>
-</section>
+<div class="hero">
+<h1>For [Her Name] ❤️</h1>
+<p>Scroll to relive our journey</p>
+</div>
 
-<section>
-    <h2>How we met</h2>
-    <p>Write your memory here.</p>
-</section>
+<div class="timeline">
 
-<section>
-    <h2>Our first adventure</h2>
-    <p>Write another memory here.</p>
-</section>
+<div class="event">
+<h2>How we met</h2>
+<p>Write your memory here.</p>
+</div>
 
-<section>
-    <h2>Happy Birthday</h2>
-    <p>I love you more than words can say.</p>
-</section>
+<div class="event">
+<h2>Our first adventure</h2>
+<p>Write memory here.</p>
+</div>
+
+<div class="event">
+<h2>Today</h2>
+<p>Happy Birthday. This is only the beginning of our story.</p>
+</div>
+
+</div>
 
 </body>
 </html>
