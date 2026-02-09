@@ -104,11 +104,12 @@
     text-align:left;
 }
 
-       .memory-img{
+.memory-img{
     width:100%;
     max-width:600px;
-    height:400px;
-    object-fit:cover;
+    max-height:420px;   /* limits tall photos */
+    height:auto;        /* preserves aspect ratio */
+    object-fit:contain; /* keeps entire photo visible */
     border-radius:14px;
     margin-bottom:20px;
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
@@ -117,7 +118,7 @@
 }
 
 .event:hover .memory-img{
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
 
 
