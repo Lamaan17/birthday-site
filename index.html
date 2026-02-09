@@ -4,6 +4,24 @@
 <title>Our Story</title>
 
 <style>
+       .heartbeat-glow{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-2;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(236,72,153,0.12), transparent 60%);
+    animation: heartbeatGlow 6s ease-in-out infinite;
+}
+
+@keyframes heartbeatGlow{
+    0%   { opacity:0.25; transform: scale(1); }
+    15%  { opacity:0.45; transform: scale(1.03); }
+    30%  { opacity:0.25; transform: scale(1); }
+    45%  { opacity:0.45; transform: scale(1.03); }
+    100% { opacity:0.25; transform: scale(1); }
+}
+
        .particles{
     position:fixed;
     inset:0;
@@ -246,6 +264,7 @@ section{
 </head>
 
 <body>
+       <div class="heartbeat-glow"></div>
         <div class="particles">
   <span style="left:10%; animation-delay:0s;"></span>
   <span style="left:25%; animation-delay:3s;"></span>
