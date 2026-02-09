@@ -123,6 +123,25 @@ p{font-size:20px; line-height:1.6;}
 section{
   padding: 80px 20px;
 }
+.act-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background: linear-gradient(#020617,#020617);
+}
+
+.act-screen h1{
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.act-screen p{
+    font-size:22px;
+    opacity:0.8;
+}
 
 </style>
 
@@ -153,6 +172,11 @@ section{
 <h1>For Maryam ❤️</h1>
 <p>Our story — Lamaan and Maryam </p>
 </div>
+        <div class="act-screen">
+<h1>Act I</h1>
+<p>Celebrating You</p>
+</div>
+
 <section>
 <h1>Celebrating You</h1>
 
@@ -190,6 +214,11 @@ section{
 </div>
 
 </section>
+        
+<div class="act-screen">
+<h1>Act II</h1>
+<p>Our Story</p>
+</div>
 
 <div class="timeline">
 
@@ -295,6 +324,11 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.event').forEach(el => observer.observe(el));
 </script>
+        <div class="act-screen">
+<h1>Act III</h1>
+<p>Our Future</p>
+</div>
+
 <section>
 <h1>Our Future</h1>
 
