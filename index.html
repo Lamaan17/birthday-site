@@ -4,6 +4,30 @@
 <title>Our Story</title>
 
 <style>
+        html{
+  scroll-behavior:smooth;
+}
+
+body{
+  scroll-snap-type:y mandatory;
+}
+
+.act-screen,
+.hero,
+.reveal-screen{
+  scroll-snap-align:start;
+}
+        .reveal-screen{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1.5s ease;
+}
+
+.reveal-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
         .reveal-screen{
     height:100vh;
     display:flex;
@@ -429,9 +453,9 @@ document.querySelectorAll('.event').forEach(el => observer.observe(el));
 
 <div class="letter-modal" id="letterModal">
   <div class="letter-box">
-    <h2>For [WRITE HER NAME]</h2>
+    <h2>For my Maryam </h2>
     <p>
-    [WRITE YOUR FULL BIRTHDAY LETTER HERE]
+    Happy Birthday! I know, I know. I'm late... kinda? Tbh, I had something else planned for you at first, Simal and I co-ordinated everythinggg lekin then the Shadi timings kinda cooked us iclll. So we pivoted and hence the website took a while :/ ANYWAYS, HAPPY BIRTHDAY TO MY LOVE, MY PRINCESS, MY BEST FRIEND, MY ONE AND ONLY MARU PARUUUU <3 I love you so so much, and honestly I am so grateful for you. Words can not describe how blessed I am, how lucky I am, and how happy I am thanks to you. You are the definition of beauty inside and out, of the perfect girl <3 I hope you had an amazing day, and heres to a lifetime and an afterlife of celebration together <3 Happy Birthday Maruu xx 
     </p>
 
     <button onclick="closeLetter()">Close</button>
@@ -439,21 +463,31 @@ document.querySelectorAll('.event').forEach(el => observer.observe(el));
 </div>
 
 <script>
-  const introOverlay = document.getElementById('introOverlay');
-  const beginBtn = document.getElementById('beginBtn');
-  const bgMusic = document.getElementById('bgMusic');
+const introOverlay = document.getElementById('introOverlay');
+const beginBtn = document.getElementById('beginBtn');
+const bgMusic = document.getElementById('bgMusic');
 
-  beginBtn.addEventListener('click', async () => {
-    // Hide overlay
+beginBtn.addEventListener('click', async () => {
+
     introOverlay.classList.add('hide');
 
-    // Try to start music (will work only after a user click)
-    try { await bgMusic.play(); } catch(e) { /* no worries if blocked */ }
+    try{
+        await bgMusic.play();
+        bgMusic.volume = 0;
 
-    // Small UX: jump to top cleanly
+        let fade = setInterval(()=>{
+            if(bgMusic.volume < 0.4){
+                bgMusic.volume += 0.02;
+            }else{
+                clearInterval(fade);
+            }
+        },200);
+    }catch(e){}
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+});
 </script>
+
 
 <script>
 function openLetter(){
@@ -462,6 +496,19 @@ function openLetter(){
 function closeLetter(){
   document.getElementById("letterModal").style.display="none";
 }
+</script>
+<script>
+const reveal = document.querySelector('.reveal-screen');
+
+const revealObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            reveal.classList.add('reveal-visible');
+        }
+    });
+});
+
+revealObserver.observe(reveal);
 </script>
 
 </body>
