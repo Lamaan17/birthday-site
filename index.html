@@ -4,6 +4,45 @@
 <title>Our Story</title>
 
 <style>
+        .reveal-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#020617;
+    text-align:center;
+}
+
+.reveal-btn{
+    margin-top:20px;
+    padding:14px 26px;
+    border-radius:999px;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    background:white;
+    color:black;
+}
+
+.letter-modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.75);
+}
+
+.letter-box{
+    background:white;
+    color:black;
+    padding:40px;
+    max-width:600px;
+    border-radius:16px;
+    text-align:left;
+}
+
         .memory-img{
     width:100%;
     max-width:600px;
@@ -413,6 +452,31 @@ document.querySelectorAll('.event').forEach(el => observer.observe(el));
     // Small UX: jump to top cleanly
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+</script>
+<div class="reveal-screen">
+<h1>Happy Birthday ❤️</h1>
+<p>This is only the beginning of our story.</p>
+
+<button class="reveal-btn" onclick="openLetter()">Open My Letter</button>
+</div>
+
+<div class="letter-modal" id="letterModal">
+  <div class="letter-box">
+    <h2>For [WRITE HER NAME]</h2>
+    <p>
+    [WRITE YOUR FULL BIRTHDAY LETTER HERE]
+    </p>
+
+    <button onclick="closeLetter()">Close</button>
+  </div>
+</div>
+<script>
+function openLetter(){
+  document.getElementById("letterModal").style.display="flex";
+}
+function closeLetter(){
+  document.getElementById("letterModal").style.display="none";
+}
 </script>
 
 </body>
