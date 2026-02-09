@@ -289,11 +289,12 @@ section{
 
 <!-- CINEMATIC INTRO OVERLAY -->
 <div id="introOverlay">
-  <h1 class="intro-title">For my Maru Paru ❤️</h1>
-  <p class="intro-sub">
-    A birthday story in three acts, for the best girl ever. <br>
-    Act 1: You. Act 2: Us. Act 3: Happy Birthday!
-  </p>
+  <h1 class="intro-title"><span id="typedText"></span></h1>
+
+<p class="intro-sub">
+  A small story… about someone very special.
+</p>
+
 
   <button class="intro-btn" id="beginBtn">Tap to Begin</button>
   <div class="small-note">Best with sound on (optional).</div>
@@ -578,6 +579,20 @@ const revealObserver = new IntersectionObserver(entries=>{
 });
 
 revealObserver.observe(reveal);
+</script>
+<script>
+const text = "For Maryam ❤️";   // WRITE HER NAME HERE
+let i = 0;
+
+function typeWriter(){
+    if(i < text.length){
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+    }
+}
+
+window.addEventListener("load", typeWriter);
 </script>
 
 </body>
