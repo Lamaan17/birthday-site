@@ -471,18 +471,22 @@ beginBtn.addEventListener('click', async () => {
 
     introOverlay.classList.add('hide');
 
-    try{
-        await bgMusic.play();
-        bgMusic.volume = 0;
+    bgMusic.currentTime = 0;
 
-        let fade = setInterval(()=>{
-            if(bgMusic.volume < 0.4){
-                bgMusic.volume += 0.02;
-            }else{
-                clearInterval(fade);
-            }
-        },200);
-    }catch(e){}
+bgMusic.play().then(()=>{
+    bgMusic.volume = 0;
+
+    let fade = setInterval(()=>{
+        if(bgMusic.volume < 0.6){
+            bgMusic.volume += 0.02;
+        }else{
+            clearInterval(fade);
+        }
+    },200);
+}).catch(err=>{
+    console.log("music blocked", err);
+});
+
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
